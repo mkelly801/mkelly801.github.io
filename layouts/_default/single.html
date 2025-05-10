@@ -24,7 +24,7 @@
           {{ end }}
 
           <!-- comments -->
-          {{ if .Site.DisqusShortname }}
+          {{ if .Site.Config.Services.Disqus.Shortname }}
           <div class="mt-5">
             {{ template "_internal/disqus.html" . }}
           </div>
