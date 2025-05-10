@@ -18,11 +18,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
-          fetch-depth: 0
+
+      # Instead of using submodules, clone the theme directly
+      - name: Clone theme
+        run: |
+          mkdir -p themes
+          git clone https://github.com/somrat-themes/somrat-hugo.git themes/somrat
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -46,6 +49,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
     needs: build
     steps:
       - name: Deploy to GitHub Pages
