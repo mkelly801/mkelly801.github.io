@@ -1,4 +1,5 @@
-
+---
+bg_image : "images/backgrounds/slider3-snow.jpg"
 
 
 # custom style
