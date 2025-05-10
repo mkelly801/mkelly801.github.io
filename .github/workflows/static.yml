@@ -20,22 +20,37 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      # Instead of using submodules, clone the theme directly
-      - name: Clone theme
+        
+      - name: Debug repository contents
         run: |
-          mkdir -p themes
-          git clone https://github.com/somrat-themes/somrat-hugo.git themes/somrat
-
+          ls -la
+          echo "Current directory structure:"
+          find . -type f -name "*.toml" | xargs cat
+          
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.111.3'  # Specify a stable version
           extended: true
-
-      - name: Build
-        run: hugo --minify
-
+      
+      - name: Clone theme directly (bypassing submodules)
+        run: |
+          rm -rf themes/somrat
+          mkdir -p themes
+          git clone --depth 1 https://github.com/somrat-themes/somrat-hugo.git themes/somrat
+          echo "Theme directory contents:"
+          ls -la themes/somrat
+          
+      - name: Clean Hugo cache
+        run: hugo --cleanDestinationDir
+        
+      - name: Build with Hugo
+        run: |
+          echo "Building site with Hugo..."
+          hugo --minify
+          echo "Public directory contents:"
+          ls -la public
+          
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
