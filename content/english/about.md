@@ -14,21 +14,33 @@ experience:
   experience_list:
     # experience item loop
     - name : "Senior UX Researcher"
-      company : "CBRE"
-      duration : "2025-"
-      content : "I lead research for IFM Hub"
+      company : "CBRE,"
+      duration : "2025-Present"
+      content : "Leading research on IFM Hub"
+
+    # experience item loop
+    - name : "Master of Science in Business Analytics"
+      company : "University of Virginia, Darden School of Business,"
+      duration : "2024-2025"
+      content : "Developing T-shaped skillset"
       
     # experience item loop
     - name : "UX Researcher"
-      company : "CBRE"
+      company : "CBRE,"
       duration : "2022-2025"
-      content : "I led research elsewhere"
+      content : "Defining product strategy"
+
+    # experience item loop
+    - name : "Research Assistant"
+      company : "U.S. Department of Health & Human Services,"
+      duration : "2020-2022"
+      content : "Impacting federal policy"
       
     # experience item loop
-    - name : "Database Manager"
-      company : "Polytechnic"
+    - name : "Bachelor of Arts in Sociology"
+      company : "James Madison University,"
       duration : "2014-2018"
-      content : "Database management is among the fundamental processes in the software field of computing. I know MS Access very well."
+      content : "Building multi-lens approach"
 
 
 
