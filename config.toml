@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 baseURL = "https://mkelly801.github.io/"
-title = "Somrat | Hugo Portfolio Template"
+title = "Mason Kelly | UXR Portfolio"
 theme = "somrat"
 # post pagination
 [pagination]

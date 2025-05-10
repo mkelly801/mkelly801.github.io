@@ -1,14 +1,15 @@
 ---
-title : "I am Mason Kelly"
+title : "Hi, I'm Mason Kelly"
 # full screen navigation
-first_name : "MacGyver"
-last_name : "SOMRAT"
+first_name : "Mason"
+last_name : "Kelly"
 bg_image : "images/backgrounds/full-nav-bg.jpg"
 # animated text loop
 occupations:
-- "Web Developer"
-- "Graphic Designer"
-- "Database Manager"
+- "Senior UX Researcher"
+- "Data Scientist"
+- "Product Strategist"
+- "Business Analyst"
 
 # slider background image loop
 slider_images:
@@ -19,7 +20,7 @@ slider_images:
 # button
 button:
   enable : true
-  label : "HIRE ME"
+  label : "contact me"
   link : "#contact"
 
 
