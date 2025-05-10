@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Englishes on Somrat | Hugo Portfolio Template</title>
+    <link>http://localhost:1313/english/</link>
+    <description>Recent content in Englishes on Somrat | Hugo Portfolio Template</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2020 a hugo theme by [somrat](https://somrat.netlify.com)</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/english/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/english/funfacts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/english/funfacts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>I&#39;m Somrat Sorkar</title>
+      <link>http://localhost:1313/english/banner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/english/banner/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KNOW MORE &lt;br&gt; ABOUT ME</title>
+      <link>http://localhost:1313/english/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/english/about/</guid>
+      <description>It&amp;rsquo;s Somrat, Professional Web Developer. I love to write code, it&amp;rsquo;s my passoin.</description>
+    </item>
+    <item>
+      <title>NEED A SERVICE?</title>
+      <link>http://localhost:1313/english/call-to-action/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/english/call-to-action/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SAY HELLO!</title>
+      <link>http://localhost:1313/english/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/english/contact/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SERVICES</title>
+      <link>http://localhost:1313/english/service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/english/service/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TESTIMONIALS</title>
+      <link>http://localhost:1313/english/testimonial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/english/testimonial/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
