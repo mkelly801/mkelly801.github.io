@@ -78,23 +78,15 @@ preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
 ############################# social site ########################
 [[params.social]]
 icon = "fab fa-facebook-f"
-link = "https://www.facebook.com/somratpro"
-
-[[params.social]]
-icon = "fab fa-twitter"
-link = "https://twitter.com/somratpro"
-
-[[params.social]]
-icon = "fab fa-instagram"
-link = "https://www.instagram.com/somratpro"
+link = "mailto: mkelly801@gmail.com"
 
 [[params.social]]
 icon = "fab fa-github"
-link = "https://github.com/somratpro"
+link = "https://github.com/mkelly801/mkelly801.github.io"
 
 [[params.social]]
 icon = "fab fa-linkedin"
-link = "https://www.linkedin.com/in/somratpro"
+link = "https://www.linkedin.com/in/masonkelly801/"
 
 
 ################################### English language #####################################
@@ -117,39 +109,15 @@ url = "/"
 weight = 1
 
 [[Languages.en.menu.main]]
-name = "About test"
+name = "About me"
 pre = "#"
 url = "about"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "Service"
-pre = "#"
-url = "service"
-weight = 3
-
-[[Languages.en.menu.main]]
-name = "Portfolio"
-pre = "#"
-url = "portfolio"
-weight = 4
-
-[[Languages.en.menu.main]]
-name = "Testimonial"
-pre = "#"
-url = "testimonial"
-weight = 5
-
-[[Languages.en.menu.main]]
-name = "Contact"
-pre = "#"
-url = "contact"
-weight = 6
-
-[[Languages.en.menu.main]]
 name = "Blog"
 url = "blog"
-weight = 7
+weight = 3
 
 
 ################################### French language #####################################
@@ -163,7 +131,7 @@ home = "Accueil"
 copyright = "Copyright &copy; 2020 a hugo theme by [somrat](https://somrat.netlify.com)"
 
 
-################# english navigation ##################
+################# french navigation ##################
 
 # main menu
 [[Languages.fr.menu.main]]
