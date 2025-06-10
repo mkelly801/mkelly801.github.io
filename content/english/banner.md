@@ -13,8 +13,8 @@ occupations:
 
 # slider background image loop
 slider_images:
-- "images/slider/slider1-moss.jpg"
-- "images/slider/slider2-beach.jpeg"
+- "images/slider/tallinn.jpg"
+- "images/slider/helsinki.jpg"
 - "images/slider/slider3-park.jpeg"
 
 # button
