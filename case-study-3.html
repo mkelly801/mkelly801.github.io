@@ -1,187 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Case Study: Utilizing Deep User Knowledge to identify where AI agents can provide the most value in work order management.">
+        <meta name="keywords" content="UX research case study, AI agents, user research, enterprise UX, automation">
+        <meta name="author" content="Mason Kelly">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Case Study: Utilizing Deep User Knowledge to identify where AI agents can provide the most value in work order management.">
-    <meta name="keywords" content="UX research case study, AI agents, user research, enterprise UX, automation, CBRE">
-    <meta name="author" content="Mason Kelly">
-    <title>Mason Kelly | Case Study - Utilizing Deep User Knowledge</title>
-    <link rel="apple-touch-icon" href="assets/images/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/fonts/remixicon.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
-    <link rel="stylesheet" href="assets/css/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/slick.min.css" />
-    <link rel="stylesheet" href="assets/css/spacing.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
+        <title>Mason Kelly | Case Study - Utilizing Deep User Knowledge</title>
 
-<body>
-    <div class="preloader">
-        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
-        <div class="preloader-heading">
-            <div class="load-text"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></div>
-        </div>
-    </div>
-    <header class="main-header">
-        <div class="header-upper">
+        <link href="images/favicon.ico" rel="icon" type="image/png">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900%7cOpen+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <!--Navbar Start-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #fff; box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);">
             <div class="container">
-                <div class="header-inner d-flex align-items-center">
-                    <div class="nav-outer clearfix mx-auto">
-                        <nav class="main-menu navbar-expand-lg">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-                                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="navbar-collapse collapse">
-                                <ul class="navigation onepage clearfix">
-                                    <li><a class="nav-link-click" href="index.html">Home</a></li>
-                                    <li><a class="nav-link-click" href="about.html">About</a></li>
-                                    <li><a class="nav-link-click" href="resume.html">Resume</a></li>
-                                    <li><a class="nav-link-click" href="works.html">Case Studies</a></li>
-                                    <li><a class="nav-link-click" href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
+                <a class="navbar-brand logo" href="index.html" style="color: #000;">
+                    Mason Kelly
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" style="color: #000 !important;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="1" style="color: #000 !important;">Case Studies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="2" style="color: #000 !important;">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="3" style="color: #000 !important;">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="4" style="color: #000 !important;">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </header>
+        </nav>
+        <!--Navbar End-->
 
-    <div class="single-project-page-design">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center pb-30">
-                    <p>CASE STUDY #3 - EXPLORATORY</p>
+        <!--Case Study Detail Start-->
+        <div class="case-study-detail">
+            <div class="container">
+                <div class="case-study-header">
+                    <p class="subtitle">Case Study #3 - Exploratory</p>
                     <h1>Utilizing Deep User Knowledge: Identifying Where AI Agents Can Provide the Most Value</h1>
                 </div>
             </div>
-        </div>
-        <div class="single-project-image">
-            <img src="assets/images/projects/case-study-3.png" alt="Case Study: Utilizing Deep User Knowledge">
-        </div>
-        <div class="container pt-30">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="single-project-page-left wow fadeInUp delay-0-2s">
-                        <div class="single-info">
-                            <p>Timeline</p>
-                            <h3>12-Week Contract (April - Q2 End)</h3>
-                        </div>
-                        <div class="single-info">
-                            <p>Scale</p>
-                            <h3>100+ Accounts, ~5,000 Facility Managers &amp; Coordinators</h3>
-                        </div>
-                        <div class="single-info">
-                            <p>Role</p>
-                            <h3>Lead UX Researcher</h3>
-                        </div>
-                        <div class="single-info">
-                            <p>Team</p>
-                            <h3>Consultant Team, Product Director</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="single-project-page-right wow fadeInUp delay-0-4s">
-                        <h2>The Business Problem</h2>
-                        <p>CBRE employees were spending up to 40% of their time actively managing work orders. This significant time investment in manual work order management was limiting the ability of Facility Managers to focus on higher-value strategic tasks and proactive maintenance.</p>
 
-                        <h2>Goals &amp; My Role</h2>
-                        <p><strong>As a team:</strong> Build AI agents to increase efficiency (as measured by time on task) of internal workers and outcomes for clients (as measured by work order time).</p>
-                        <p><strong>As a researcher:</strong> Identify the ripest opportunities for automation within the work order flow to increase usability (as measured by UEM). I served as Lead UX Researcher for IFM Hub, including the Work Order domain, and managed the consultant team for research activities on this project.</p>
-
-                        <h2>Research Questions</h2>
-                        <p><strong>Review of Past Research:</strong></p>
-                        <ul>
-                            <li>Where do CBRE employees spend most of their time when managing work orders?</li>
-                            <li>What steps are duplicative or more manual than they could be?</li>
-                            <li>What pain points arise because of these inefficiencies?</li>
-                        </ul>
-                        <p><strong>Semi-Structured Interviews:</strong></p>
-                        <ul>
-                            <li>What steps in the work order management process do users spend the most time on?</li>
-                            <li>How much time do they spend on those steps?</li>
-                            <li>What information do users need to act and what actions do they take to progress a work order?</li>
-                        </ul>
-
-                        <h2>R&amp;D Activities</h2>
-                        <p><strong>April - Begin Analysis:</strong> Consultant team onboarded, research kickoff occurs, review of past research and interviews start.</p>
-                        <p><strong>Q2 End - Share Findings:</strong> Research completed and findings shared, consultant team formally presents agent proposal, agents are approved by leadership.</p>
-                        <p><strong>Q3 - Agent Development:</strong> Internal agent development begins with a goal of release by end of Q3.</p>
-
-                        <h2>Key Findings</h2>
-                        <p>Research identified tracking and updating the work order as the step in which there was the most opportunity for agentic assistance.</p>
-                        <p><strong>Key Pain Points:</strong></p>
-                        <ul>
-                            <li><strong>Lack of awareness</strong> of work order priority and action-triggering information.</li>
-                            <li><strong>Lack of visibility</strong> into workflow bottlenecks across the work order lifecycle.</li>
-                            <li>Significant FM time is spent on <strong>email coordination</strong> of work orders between multiple parties.</li>
-                        </ul>
-                        <p><strong>4 AI Agents Proposed:</strong></p>
-                        <ul>
-                            <li><strong>Auditor Agent</strong> -- Flags SLA risks and bottlenecks</li>
-                            <li><strong>Actor Agent</strong> -- Resolves stuck tickets and corrects priorities</li>
-                            <li><strong>Notifier Agent</strong> -- Sends targeted alerts</li>
-                            <li><strong>Quality Agent</strong> -- Detects patterns and anomalies</li>
-                        </ul>
-
-                        <h2>Impact &amp; Measurement</h2>
-                        <p><strong>4 AI agents</strong> proposed and approved by leadership, with development beginning in Q3.</p>
-                        <p>Success will be measured across four dimensions: <strong>Average Work Order Time</strong>, <strong>Time on Task</strong>, <strong>UEM Score</strong>, and <strong>CSAT Scores</strong>.</p>
-
-                        <h2>Key Challenges</h2>
-                        <p><strong>Lack of Product Analytics:</strong> Product analytics capabilities matured throughout the year but were spotty before Q3 as events were being set up.</p>
-                        <p><strong>Initial Confusion on Research Lead:</strong> The consultant team was brought on to do everything, but I took lead on research as their planned research was a duplication of past internal research.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="main-footer">
-        <div class="footer-bottom pt-50 pb-40">
             <div class="container">
+                <div class="case-study-hero-img">
+                    <img src="images/portfolio/case-study-3.png" alt="Case Study: Utilizing Deep User Knowledge">
+                </div>
+            </div>
+
+            <div class="container pt-30">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="copyright-text extra-copyright">
-                            <p>Senior UX Researcher | Washington, DC</p>
+                    <div class="col-lg-4">
+                        <div class="case-study-sidebar">
+                            <div class="sidebar-item">
+                                <p>Timeline</p>
+                                <h3>12-Week Contract (April - Q2 End)</h3>
+                            </div>
+                            <div class="sidebar-item">
+                                <p>Scale</p>
+                                <h3>100+ Accounts, ~5,000 Facility Managers &amp; Coordinators</h3>
+                            </div>
+                            <div class="sidebar-item">
+                                <p>Role</p>
+                                <h3>Lead UX Researcher</h3>
+                            </div>
+                            <div class="sidebar-item">
+                                <p>Team</p>
+                                <h3>Consultant Team, Product Director</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="case-study-body">
+                            <h2>The Business Problem</h2>
+                            <p>CBRE employees were spending up to 40% of their time actively managing work orders. This significant time investment in manual work order management was limiting the ability of Facility Managers to focus on higher-value strategic tasks and proactive maintenance.</p>
+
+                            <h2>Goals &amp; My Role</h2>
+                            <p><strong>As a team:</strong> Build AI agents to increase efficiency (as measured by time on task) of internal workers and outcomes for clients (as measured by work order time).</p>
+                            <p><strong>As a researcher:</strong> Identify the ripest opportunities for automation within the work order flow to increase usability (as measured by UEM). I served as Lead UX Researcher for IFM Hub, including the Work Order domain, and managed the consultant team for research activities on this project.</p>
+
+                            <h2>Research Questions</h2>
+                            <p><strong>Review of Past Research:</strong></p>
+                            <ul>
+                                <li>Where do CBRE employees spend most of their time when managing work orders?</li>
+                                <li>What steps are duplicative or more manual than they could be?</li>
+                                <li>What pain points arise because of these inefficiencies?</li>
+                            </ul>
+                            <p><strong>Semi-Structured Interviews:</strong></p>
+                            <ul>
+                                <li>What steps in the work order management process do users spend the most time on?</li>
+                                <li>How much time do they spend on those steps?</li>
+                                <li>What information do users need to act and what actions do they take to progress a work order?</li>
+                            </ul>
+
+                            <h2>R&amp;D Activities</h2>
+                            <p><strong>April - Begin Analysis:</strong> Consultant team onboarded, research kickoff occurs, review of past research and interviews start.</p>
+                            <p><strong>Q2 End - Share Findings:</strong> Research completed and findings shared, consultant team formally presents agent proposal, agents are approved by leadership.</p>
+                            <p><strong>Q3 - Agent Development:</strong> Internal agent development begins with a goal of release by end of Q3.</p>
+
+                            <h2>Key Findings</h2>
+                            <p>Research identified tracking and updating the work order as the step in which there was the most opportunity for agentic assistance.</p>
+                            <p><strong>Key Pain Points:</strong></p>
+                            <ul>
+                                <li><strong>Lack of awareness</strong> of work order priority and action-triggering information.</li>
+                                <li><strong>Lack of visibility</strong> into workflow bottlenecks across the work order lifecycle.</li>
+                                <li>Significant FM time is spent on <strong>email coordination</strong> of work orders between multiple parties.</li>
+                            </ul>
+                            <p><strong>4 AI Agents Proposed:</strong></p>
+                            <ul>
+                                <li><strong>Auditor Agent</strong> -- Flags SLA risks and bottlenecks</li>
+                                <li><strong>Actor Agent</strong> -- Resolves stuck tickets and corrects priorities</li>
+                                <li><strong>Notifier Agent</strong> -- Sends targeted alerts</li>
+                                <li><strong>Quality Agent</strong> -- Detects patterns and anomalies</li>
+                            </ul>
+
+                            <h2>Impact &amp; Measurement</h2>
+                            <p><strong>4 AI agents</strong> proposed and approved by leadership, with development beginning in Q3.</p>
+                            <p>Success will be measured across four dimensions: <strong>Average Work Order Time</strong>, <strong>Time on Task</strong>, <strong>UEM Score</strong>, and <strong>CSAT Scores</strong>.</p>
+
+                            <h2>Key Challenges</h2>
+                            <p><strong>Lack of Product Analytics:</strong> Product analytics capabilities matured throughout the year but were spotty before Q3 as events were being set up.</p>
+                            <p><strong>Initial Confusion on Research Lead:</strong> The consultant team was brought on to do everything, but I took lead on research as their planned research was a duplication of past internal research.</p>
+
+                            <div class="back-link">
+                                <a href="index.html"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <div class="progress-wrap cursor-pointer">
-        <i class="ri-arrow-up-double-line"></i>
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/appear.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
+        <!--Case Study Detail End-->
 
+        <!--Footer Start-->
+        <footer class="pt-50 pb-50">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="contact-info">
+                            <h5>Mason Kelly</h5>
+                            <p>Senior UX Researcher</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="contact-info">
+                            <h5>Location</h5>
+                            <p>Washington, DC</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="contact-info">
+                            <h5>LinkedIn</h5>
+                            <p><a href="https://www.linkedin.com/in/masonkelly801" target="_blank" style="color: #fff;">linkedin.com/in/masonkelly801</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <hr>
+                        <p class="copy pt-30">
+                            Mason Kelly &copy; 2025. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer End-->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
 </html>

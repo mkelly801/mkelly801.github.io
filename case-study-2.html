@@ -1,188 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Case Study: Creating a Feedback Loop - Measuring and improving usability in enterprise products through UEM analysis and concept testing.">
+        <meta name="keywords" content="UX research case study, usability, feedback loop, enterprise UX, self-service">
+        <meta name="author" content="Mason Kelly">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Case Study: Creating a Feedback Loop - Measuring and improving usability in enterprise products through UEM analysis and concept testing.">
-    <meta name="keywords" content="UX research case study, usability, feedback loop, enterprise UX, self-service, CBRE">
-    <meta name="author" content="Mason Kelly">
-    <title>Mason Kelly | Case Study - Creating a Feedback Loop</title>
-    <link rel="apple-touch-icon" href="assets/images/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/fonts/remixicon.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
-    <link rel="stylesheet" href="assets/css/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/slick.min.css" />
-    <link rel="stylesheet" href="assets/css/spacing.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css">
-</head>
+        <title>Mason Kelly | Case Study - Creating a Feedback Loop</title>
 
-<body>
-    <div class="preloader">
-        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
-            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
-        <div class="preloader-heading">
-            <div class="load-text"><span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span></div>
-        </div>
-    </div>
-    <header class="main-header">
-        <div class="header-upper">
+        <link href="images/favicon.ico" rel="icon" type="image/png">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900%7cOpen+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <!--Navbar Start-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #fff; box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);">
             <div class="container">
-                <div class="header-inner d-flex align-items-center">
-                    <div class="nav-outer clearfix mx-auto">
-                        <nav class="main-menu navbar-expand-lg">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-                                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="navbar-collapse collapse">
-                                <ul class="navigation onepage clearfix">
-                                    <li><a class="nav-link-click" href="index.html">Home</a></li>
-                                    <li><a class="nav-link-click" href="about.html">About</a></li>
-                                    <li><a class="nav-link-click" href="resume.html">Resume</a></li>
-                                    <li><a class="nav-link-click" href="works.html">Case Studies</a></li>
-                                    <li><a class="nav-link-click" href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
+                <a class="navbar-brand logo" href="index.html" style="color: #000;">
+                    Mason Kelly
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" style="color: #000 !important;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="1" style="color: #000 !important;">Case Studies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="2" style="color: #000 !important;">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="3" style="color: #000 !important;">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link" data-scroll-nav="4" style="color: #000 !important;">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </header>
+        </nav>
+        <!--Navbar End-->
 
-    <div class="single-project-page-design">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center pb-30">
-                    <p>CASE STUDY #2 - EVALUATIVE</p>
+        <!--Case Study Detail Start-->
+        <div class="case-study-detail">
+            <div class="container">
+                <div class="case-study-header">
+                    <p class="subtitle">Case Study #2 - Evaluative</p>
                     <h1>Creating a Feedback Loop: The Cycle of Measuring &amp; Improving Usability in Enterprise Products</h1>
                 </div>
             </div>
-        </div>
-        <div class="single-project-image">
-            <img src="assets/images/projects/case-study-2.png" alt="Case Study: Creating a Feedback Loop">
-        </div>
-        <div class="container pt-30">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="single-project-page-left wow fadeInUp delay-0-2s">
-                        <div class="single-info">
-                            <p>Timeline</p>
-                            <h3>February - Q2+ (Ongoing Monitoring)</h3>
-                        </div>
-                        <div class="single-info">
-                            <p>Scale</p>
-                            <h3>20,000 Requests/Month, 100+ Accounts, 10,000+ Users</h3>
-                        </div>
-                        <div class="single-info">
-                            <p>Role</p>
-                            <h3>Lead UX Researcher</h3>
-                        </div>
-                        <div class="single-info">
-                            <p>Team</p>
-                            <h3>UX Designer, Product Manager, Business Partners</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="single-project-page-right wow fadeInUp delay-0-4s">
-                        <h2>The Business Problem</h2>
-                        <p>By the end of 2024, 50% of service requests were being input via calls to CBRE call centers. Such a high rate of call center calls was resulting in call center employees spending less time on emergency or highly complex requests, instead spending much of their time on straightforward requests that should be able to be input via self-service.</p>
 
-                        <h2>Goals &amp; My Role</h2>
-                        <p><strong>As a team:</strong> Make improvements to the Self-Service Request flow so that calls to the Call Center go down, as measured by call center rate.</p>
-                        <p><strong>As a researcher:</strong> Identify if there is an underlying issue causing users to use the Self-Service Request less than expected. Determine what design improvements can be made to increase usability scores and usage of the Self-Service flow. I served as Lead UX Researcher for IFM Hub and owner of the quarterly User Experience Metric.</p>
-
-                        <h2>Baseline Metrics</h2>
-                        <ul>
-                            <li><strong>50% Call Center Rate</strong> -- of total requests (20,000 requests a month)</li>
-                            <li><strong>64.7 UEM Score</strong> -- for the Self-Service module in Q1 (70 is the score determined to be "good")</li>
-                            <li><strong>N/A Time on Task</strong> -- no product analytics available in Q1 2025</li>
-                        </ul>
-
-                        <h2>Research Questions</h2>
-                        <p><strong>Qualitative Analysis of UEM Comments:</strong></p>
-                        <ul>
-                            <li>What themes or pain points are surfacing in the UEM comments?</li>
-                            <li>For each theme or pain point, how many users are mentioning it compared to other themes?</li>
-                        </ul>
-                        <p><strong>Testing of Problematic Flow:</strong></p>
-                        <ul>
-                            <li>What information do they need to efficiently input a service request?</li>
-                            <li>What is preventing them from accomplishing this?</li>
-                            <li>What is causing them to drop-off?</li>
-                        </ul>
-
-                        <h2>Research Activities</h2>
-                        <p><strong>February - Begin Analysis:</strong> Q1 (Baseline) UEM released in January; business problem identified in February.</p>
-                        <p><strong>March - Enhancement Release:</strong> Qualitative analysis of UEM responses, concept testing, design improvements and release.</p>
-                        <p><strong>Q2+ - Monitor:</strong> Using the rest of the year to monitor and complete retrospective on success of project.</p>
-
-                        <h2>Key Finding</h2>
-                        <p>The location selector within the request flow was unforgiving when attempting to input locations. This was uncovered in UEM qualitative analysis and confirmed in concept testing.</p>
-                        <ul>
-                            <li>Many users weren't saving their default location.</li>
-                            <li>When trying to change the room or area for a location, users couldn't click back to the previous hierarchy step but rather had to retype the entire location.</li>
-                            <li>Search results for a location were showing each hierarchy level when most users were always at just one building, obfuscating key information.</li>
-                        </ul>
-                        <p>Insights led to a Jira ticket for design improvements and the design improvements were picked up by dev and released by the end of Q1.</p>
-
-                        <h2>Impact</h2>
-                        <p><strong>18.4% reduction</strong> in call center request rate.</p>
-                        <p><strong>7% increase</strong> in total UEM score for the Self-Service module.</p>
-                        <p><strong>24 seconds</strong> time on task to select a location (baseline established).</p>
-
-                        <h2>Key Challenges</h2>
-                        <p><strong>Lack of Product Analytics:</strong> Product analytics capabilities matured throughout the year but were spotty before Q3 as events were being set up.</p>
-                        <p><strong>Quick Turnaround:</strong> A tight timeline limited research's ability to do more rigorous testing than concept testing.</p>
-                        <p><strong>Inability to Prove Causality:</strong> While we do see metrics like call center rate and UEM score improve, I did not A/B test these designs, so I have no way of truly identifying that these design improvements directly caused the improvements in metrics.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="main-footer">
-        <div class="footer-bottom pt-50 pb-40">
             <div class="container">
+                <div class="case-study-hero-img">
+                    <img src="images/portfolio/case-study-2.png" alt="Case Study: Creating a Feedback Loop">
+                </div>
+            </div>
+
+            <div class="container pt-30">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="copyright-text extra-copyright">
-                            <p>Senior UX Researcher | Washington, DC</p>
+                    <div class="col-lg-4">
+                        <div class="case-study-sidebar">
+                            <div class="sidebar-item">
+                                <p>Timeline</p>
+                                <h3>February - Q2+ (Ongoing Monitoring)</h3>
+                            </div>
+                            <div class="sidebar-item">
+                                <p>Scale</p>
+                                <h3>20,000 Requests/Month, 100+ Accounts, 10,000+ Users</h3>
+                            </div>
+                            <div class="sidebar-item">
+                                <p>Role</p>
+                                <h3>Lead UX Researcher</h3>
+                            </div>
+                            <div class="sidebar-item">
+                                <p>Team</p>
+                                <h3>UX Designer, Product Manager, Business Partners</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="case-study-body">
+                            <h2>The Business Problem</h2>
+                            <p>By the end of 2024, 50% of service requests were being input via calls to CBRE call centers. Such a high rate of call center calls was resulting in call center employees spending less time on emergency or highly complex requests, instead spending much of their time on straightforward requests that should be able to be input via self-service.</p>
+
+                            <h2>Goals &amp; My Role</h2>
+                            <p><strong>As a team:</strong> Make improvements to the Self-Service Request flow so that calls to the Call Center go down, as measured by call center rate.</p>
+                            <p><strong>As a researcher:</strong> Identify if there is an underlying issue causing users to use the Self-Service Request less than expected. Determine what design improvements can be made to increase usability scores and usage of the Self-Service flow. I served as Lead UX Researcher for IFM Hub and owner of the quarterly User Experience Metric.</p>
+
+                            <h2>Baseline Metrics</h2>
+                            <ul>
+                                <li><strong>50% Call Center Rate</strong> -- of total requests (20,000 requests a month)</li>
+                                <li><strong>64.7 UEM Score</strong> -- for the Self-Service module in Q1 (70 is the score determined to be "good")</li>
+                                <li><strong>N/A Time on Task</strong> -- no product analytics available in Q1 2025</li>
+                            </ul>
+
+                            <h2>Research Questions</h2>
+                            <p><strong>Qualitative Analysis of UEM Comments:</strong></p>
+                            <ul>
+                                <li>What themes or pain points are surfacing in the UEM comments?</li>
+                                <li>For each theme or pain point, how many users are mentioning it compared to other themes?</li>
+                            </ul>
+                            <p><strong>Testing of Problematic Flow:</strong></p>
+                            <ul>
+                                <li>What information do they need to efficiently input a service request?</li>
+                                <li>What is preventing them from accomplishing this?</li>
+                                <li>What is causing them to drop-off?</li>
+                            </ul>
+
+                            <h2>Research Activities</h2>
+                            <p><strong>February - Begin Analysis:</strong> Q1 (Baseline) UEM released in January; business problem identified in February.</p>
+                            <p><strong>March - Enhancement Release:</strong> Qualitative analysis of UEM responses, concept testing, design improvements and release.</p>
+                            <p><strong>Q2+ - Monitor:</strong> Using the rest of the year to monitor and complete retrospective on success of project.</p>
+
+                            <h2>Key Finding</h2>
+                            <p>The location selector within the request flow was unforgiving when attempting to input locations. This was uncovered in UEM qualitative analysis and confirmed in concept testing.</p>
+                            <ul>
+                                <li>Many users weren't saving their default location.</li>
+                                <li>When trying to change the room or area for a location, users couldn't click back to the previous hierarchy step but rather had to retype the entire location.</li>
+                                <li>Search results for a location were showing each hierarchy level when most users were always at just one building, obfuscating key information.</li>
+                            </ul>
+                            <p>Insights led to a Jira ticket for design improvements and the design improvements were picked up by dev and released by the end of Q1.</p>
+
+                            <h2>Impact</h2>
+                            <p><strong>18.4% reduction</strong> in call center request rate.</p>
+                            <p><strong>7% increase</strong> in total UEM score for the Self-Service module.</p>
+                            <p><strong>24 seconds</strong> time on task to select a location (baseline established).</p>
+
+                            <h2>Key Challenges</h2>
+                            <p><strong>Lack of Product Analytics:</strong> Product analytics capabilities matured throughout the year but were spotty before Q3 as events were being set up.</p>
+                            <p><strong>Quick Turnaround:</strong> A tight timeline limited research's ability to do more rigorous testing than concept testing.</p>
+                            <p><strong>Inability to Prove Causality:</strong> While we do see metrics like call center rate and UEM score improve, I did not A/B test these designs, so I have no way of truly identifying that these design improvements directly caused the improvements in metrics.</p>
+
+                            <div class="back-link">
+                                <a href="index.html"><i class="fa fa-arrow-left"></i> Back to Portfolio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <div class="progress-wrap cursor-pointer">
-        <i class="ri-arrow-up-double-line"></i>
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/appear.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
+        <!--Case Study Detail End-->
 
+        <!--Footer Start-->
+        <footer class="pt-50 pb-50">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="contact-info">
+                            <h5>Mason Kelly</h5>
+                            <p>Senior UX Researcher</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="contact-info">
+                            <h5>Location</h5>
+                            <p>Washington, DC</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="contact-info">
+                            <h5>LinkedIn</h5>
+                            <p><a href="https://www.linkedin.com/in/masonkelly801" target="_blank" style="color: #fff;">linkedin.com/in/masonkelly801</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <hr>
+                        <p class="copy pt-30">
+                            Mason Kelly &copy; 2025. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Footer End-->
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
 </html>
