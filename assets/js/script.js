@@ -1,361 +1,456 @@
-(function ($) {
-	'use strict';
+/*
+* ----------------------------------------------------------------------------------------
+Author       : Hridoy
+Template Name: Bentos - Personal Portfolio HTML Template
+Version      : 1.0                                          
+* ----------------------------------------------------------------------------------------
+*/
 
-	/*--------------------------------
-	 Start Preloader Animation
-	----------------------------------*/
-	$(window).on('load', function () {
-		$('.preloader').fadeOut(100);
-	});
+(function($) {
 
-	/*--------------------------------
-			End Preloader Animation
-		----------------------------------*/
+    "use strict";
 
-	// -----------------------------
-	//  Count Up
-	// -----------------------------
-	function counter() {
-		var oTop;
-		if ($('.count').length !== 0) {
-			oTop = $('.count').offset().top - window.innerHeight;
-		}
-		if ($(window).scrollTop() > oTop) {
-			$('.count').each(function () {
-				var $this = $(this),
-					countTo = $this.attr('data-count');
-				$({
-					countNum: $this.text()
-				}).animate({
-					countNum: countTo
-				}, {
-					duration: 1000,
-					easing: 'swing',
-					step: function () {
-						$this.text(Math.floor(this.countNum));
-					},
-					complete: function () {
-						$this.text(this.countNum);
-					}
-				});
-			});
-		}
-	}
-	// -----------------------------
-	//  On Scroll
-	// -----------------------------
-	$(window).on('scroll', function () {
-		counter();
-	});
+    $(document).ready(function() {
 
 
 
-	/*--------------------------------
-	 Start Smooth Scrolling
-	----------------------------------*/
-	function smoothScroll() {
-		// Select all links with hashes
-		$('a[href*="#"]')
-			// Remove links that don't actually link to anything
-			.not('[href="#"]')
-			.not('[href="#0"]')
-			.on("click", function (event) {
-				// On-page links
-				if (
-					location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-					location.hostname == this.hostname
-				) {
-					// Figure out element to scroll to
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-					// Does a scroll target exist?
-					if (target.length) {
-						// Only prevent default if animation is actually gonna happen
-						event.preventDefault();
-						$('html, body').animate({
-							scrollTop: target.offset().top
-						}, 1000, "easeInOutExpo", function () {
-							// Callback after animation
-							// Must change focus!
-							var $target = $(target);
-							$target.focus();
-							if ($target.is(":focus")) { // Checking if the target was focused
-								return false;
-							} else {
-								$target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-								$target.focus(); // Set focus again
-							}
-						});
-					}
-				}
-			});
-		jQuery.extend(jQuery.easing, {
-			easeInOutExpo: function (x, t, b, c, d) {
-				if (t == 0) return b;
-				if (t == d) return b + c;
-				if ((t /= d / 2) < 1) return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
-				return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
-			}
-		});
-	}
-	// Applying Smooth Scroll When The Browser Is Not Opera Mini Or UC Browser
-	if (navigator.userAgent.indexOf('Opera Mini') == -1 || navigator.userAgent.indexOf('UCBrowser') != -1) {
-		smoothScroll();
-	}
-	/*--------------------------------
-			End Smooth Scrolling
-	----------------------------------*/
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  EXTRA JS
+         * ----------------------------------------------------------------------------------------
+         */
 
-	/*--------------------------------
-	 Start Header
-		----------------------------------*/
-	// Initiating Background Slider
-	var backgroundSlide = $('#background-slide');
-	backgroundSlide.owlCarousel({
-		loop: true,
-		items: 1,
-		dots: false,
-		autoplay: true,
-		autoplayTimeout: 5000,
-		animateOut: 'fadeOut'
-	});
-	$('.slider-prev-button').on("click", function () {
-		backgroundSlide.trigger('prev.owl.carousel');
-	});
-	$('.slider-next-button').on("click", function () {
-		backgroundSlide.trigger('next.owl.carousel');
-	});
-	// Setting Up Background Images
-	function SliderBackground() {
-		if ($(".owl-full-width .slider").length) {
-			$(".owl-full-width .slider").each(function () {
-				var $this = $(this);
-				var img = $this.children(img);
-				var imgSrc = img.attr("src");
-				$this.css({
-					backgroundImage: "url(" + imgSrc + ")",
-					backgroundSize: "cover",
-					backgroundPosition: "center center"
-				});
-			});
-		}
-	}
-	// Initializing Background Setting Function
-	SliderBackground();
-	// Toggle Fullscreen Navigation
-	$('#burger').on("click", function () {
-		$(".fullscreen-nav-container").slideToggle(300);
-	});
-	$(".fullscreen-nav-holder a, .turn-home").on("click", function () {
-		$("#burger").trigger("click");
-	});
-	/*--------------------------------
-		 End Header
-	----------------------------------*/
+        $('.nav-link-click').click(function() {
+            $('.navbar-collapse').collapse('hide');
+        });
 
-	/*--------------------------------
-	Start Menu
-		----------------------------------*/
-	// Highlighting Menu on Scroll Through Sections
-	$(window).on('scroll', function () {
-		$('section').each(function () {
-			if ($(window).scrollTop() + 50 >= $(this).offset().top) {
-				var id = $(this).attr('id');
-				$('.menu-item').removeClass('active');
-				$(".menu-item." + id).addClass("active");
-				$(".mobile-menu-item").removeClass("active");
-				$(".mobile-menu-item." + id).addClass("active");
-			}
-		});
-	});
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  PRELOADER JS & DOCUMENT LOAD JS
+         * ----------------------------------------------------------------------------------------
+         */
 
-	// Styling Menu on Scroll
-	$('.about-me').waypoint({
-		handler: function (direction) {
-			// Fixing Menu after leaving Header Section
-			$(".menu").toggleClass("menu-fix");
-			// Changing Menu background after leaving Header Section
-			$(".menu-container").toggleClass("menu-normal");
-			$(".menu-item").toggleClass("menu-item-transparent");
-			$(".desktop-menu .hvr-underline-from-left").toggleClass("dark");
-			// Toggling Mobile Menu Visibility
-			$(".mobile-menu").toggleClass("mobile-menu-fix");
-			// Auto-Collapsing Mobile Menu When Left Open
-			var a = $(".menu-link").attr("class");
-			if (direction == "up" && a == "menu-link active") {
-				$(".menu-link").trigger("click");
-			}
-		}
-	});
+        $(window).on('load', function() {
 
-	// Toggle Mobile Menu
-	$('.mobile-menu a').on("click", function () {
-		$(".menu-link").toggleClass("active");
-		$(".menu-slider").slideToggle(500);
-	});
-	/*--------------------------------
-			 End Menu
-		----------------------------------*/
+            $('.loadersss').fadeOut();
+            $('#preloader-areasss').delay(350).fadeOut('slow');
 
-	/*--------------------------------
-			Start About Me
-	----------------------------------*/
-	// Initializing Skillbar Animation
-	$('.skill h3').waypoint({
-		handler: function (direction) {
-			if (direction == "up") {
-				$('.skillbar').each(function () {
-					$(this).find('.skillbar-bar').css("width", "0");
-				});
-			} else if (direction == "down") {
-				$('.skillbar').each(function () {
-					$(this).find('.skillbar-bar').animate({
-						width: jQuery(this).attr('data-percent')
-					}, 2000);
-				});
-			}
-		},
-		offset: 'bottom-in-view'
-	});
-	/*--------------------------------
-			End About Me
-	----------------------------------*/
 
-	/*--------------------------------
-			 Start Portfolio
-	----------------------------------*/
-	// Shuffle js filter 
-	var containerEl = document.querySelector('.filtr-wrapper');
-	if (containerEl) {
-		var Shuffle = window.Shuffle;
-		var myShuffle = new Shuffle(document.querySelector('.filtr-wrapper'), {
-			itemSelector: '.filtr-item',
-			buffer: 1
-		});
+            // ## Project Filtering
+            if ($('.project-masonry-active').length) {
+                $(this).imagesLoaded(function() {
+                    $('.project-masonry-active').isotope({
+                        // options
+                        itemSelector: '.item',
+                    });
+                });
+            }
 
-		jQuery('input[name="shuffle-filter"]').on('change', function (evt) {
-			var input = evt.currentTarget;
-			if (input.checked) {
-				myShuffle.filter(input.value);
-			}
-		});
-	}
 
-	// Initialize MagnificPopup Plugin
-	$('.filtr-wrapper').magnificPopup({
-		type: 'image',
-		delegate: '.image-pop',
-		gallery: {
-			enabled: true
-		},
-		zoom: {
-			enabled: true,
-			duration: 300,
-			easing: 'ease-in-out'
-		}
-	});
-	/*--------------------------------
-			 End Portfolio
-	----------------------------------*/
+            // ## Blog Standard
+            if ($('.blog-standard-wrap').length) {
+                $(this).imagesLoaded(function() {
+                    $('.blog-standard-wrap').isotope({
+                        // options
+                        itemSelector: '.item',
+                    });
+                });
+            }
 
-	/*--------------------------------
-			 Start Testimonials
-	----------------------------------*/
-	// Configure and Initialize Owl Carousel
-	$(".owl-carousel").owlCarousel({
-		items: 1,
-		loop: true,
-		dots: true,
-		autoplay: true,
-		autoplayTimeout: 3000
-	});
-	/*--------------------------------
-			End Testimonials
-	----------------------------------*/
 
-	/*--------------------------------
-			Start Code for Mobile Devices
-	----------------------------------*/
-	// Code for Opera Mini
-	var vh = $(window).height();
-	if (navigator.userAgent.indexOf('Opera Mini') != -1) {
-		// Setting Fun Facts Value Immediately 
-		work.start();
-		happyClient.start();
-		projects.start();
-		coffee.start();
-		// Setting Skillbar Value Immediately
-		$('.skillbar').each(function () {
-			$(this).find('.skillbar-bar').animate({
-				width: jQuery(this).attr('data-percent')
-			}, 0);
-		});
-		// Removing Bootstrap Class and Re-Style Input
-		$("input").removeClass("form-control");
-		$("input").css({
-			"width": "100%",
-			"height": "50px",
-			"background": "#fff"
-		});
-		// Removing Full-Screen Nav
-		$(".navigation-icon").css("display", "none");
-	}
 
-	// Code For UC Browser
-	if (navigator.userAgent.indexOf('UCBrowser') != -1) {
-		// Removing Full-Screen Nav
-		$(".navigation-icon").css("display", "none");
-		$(".fun-facts").css({
-			"display": "table",
-			"margin": "auto"
-		});
-		// Setting Fun Facts Value Immediately 
-		work.start();
-		happyClient.start();
-		projects.start();
-		coffee.start();
-		// Setting Skillbar Value Immediately
-		$('.skillbar').each(function () {
-			$(this).find('.skillbar-bar').animate({
-				width: jQuery(this).attr('data-percent')
-			}, 0);
-		});
-	}
-	/*--------------------------------
-			End Code for Mobile Devices
-	----------------------------------*/
 
-	/*--------------------------------
-			Others
-	----------------------------------*/
-	// Code for Internet Explorer
-	if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
-		$(".header, .fullscreen-nav-container, .like-me, .contact").css("background-attachment", "scroll");
-		$(".fullscreen-nav-holder").css("width", "100vw");
-	}
 
-	// Wow Plugin Initialization
-	var wow = new WOW({
-		animateClass: 'animated',
-		offset: 70,
-		mobile: false
-	});
-	wow.init();
+        });
 
-	// Toggling Visibility of Scroll Up Button
-	$(".about-me-images").waypoint({
-		handler: function (direction) {
-			$(".scroll-up").toggleClass("scroll-up-show");
-		},
-		offset: "bottom-in-view"
-	});
-	$(".sub-button").waypoint({
-		handler: function (direction) {
-			$(".scroll-up").toggleClass("scroll-up-show");
-		},
-		offset: "bottom-in-view"
-	});
-	/*--------------------------------
-			Others
-	----------------------------------*/
-}(jQuery));
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  HEADER STYLE JS
+         * ----------------------------------------------------------------------------------------
+         */
+        function headerStyle() {
+            if ($('.main-header').length) {
+                var windowpos = $(window).scrollTop();
+                var siteHeader = $('.main-header');
+                var scrollLink = $('.scroll-top');
+                if (windowpos >= 250) {
+                    siteHeader.addClass('fixed-header');
+                    scrollLink.fadeIn(300);
+                } else {
+                    siteHeader.removeClass('fixed-header');
+                    scrollLink.fadeOut(300);
+                }
+            }
+        }
+        headerStyle();
+
+
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  MAGNIFIC POPUP JS
+         * ----------------------------------------------------------------------------------------
+         */
+
+        var magnifPopup = function() {
+            $('.work-popup').magnificPopup({
+                type: 'image',
+                removalDelay: 300,
+                mainClass: 'mfp-with-zoom',
+                gallery: {
+                    enabled: true
+                },
+                zoom: {
+                    enabled: false, // By default it's false, so don't forget to enable it
+
+                    duration: 300, // duration of the effect, in milliseconds
+                    easing: 'ease-in-out', // CSS transition easing function
+
+                    // The "opener" function should return the element from which popup will be zoomed in
+                    // and to which popup will be scaled down
+                    // By defailt it looks for an image tag:
+                    opener: function(openerElement) {
+                        // openerElement is the element on which popup was initialized, in this case its <a> tag
+                        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+                        return openerElement.is('img') ? openerElement : openerElement.find('img');
+                    }
+                }
+            });
+
+
+            $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+                disableOn: 700,
+                type: 'iframe',
+                mainClass: 'mfp-fade',
+                removalDelay: 160,
+                preloader: false,
+
+                fixedContentPos: false
+            });
+
+        };
+        // Call the functions 
+        magnifPopup();
+
+
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  SCROOL TO UP JS
+         * ----------------------------------------------------------------------------------------
+         */
+
+        var progressPath = document.querySelector('.progress-wrap path');
+        var pathLength = progressPath.getTotalLength();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+        var updateProgress = function() {
+            var scroll = $(window).scrollTop();
+            var height = $(document).height() - $(window).height();
+            var progress = pathLength - (scroll * pathLength / height);
+            progressPath.style.strokeDashoffset = progress;
+        }
+        updateProgress();
+        $(window).scroll(updateProgress);
+        var offset = 150;
+        var duration = 550;
+        jQuery(window).on('scroll', function() {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.progress-wrap').addClass('active-progress');
+            } else {
+                jQuery('.progress-wrap').removeClass('active-progress');
+            }
+        });
+        jQuery('.progress-wrap').on('click', function(event) {
+            event.preventDefault();
+            jQuery('html, body').animate({
+                scrollTop: 0
+            }, duration);
+            return false;
+        })
+
+
+
+        /*
+         * ----------------------------------------------------------------------------------------
+         *  DROPDOWN MENU JS
+         * ----------------------------------------------------------------------------------------
+         */
+        var mobileWidth = 992;
+        var navcollapse = $('.navigation li.dropdown');
+
+        navcollapse.hover(function() {
+            if ($(window).innerWidth() >= mobileWidth) {
+                $(this).children('ul').stop(true, false, true).slideToggle(300);
+                $(this).children('.megamenu').stop(true, false, true).slideToggle(300);
+            }
+        });
+
+        // ## Submenu Dropdown Toggle
+        if ($('.main-header .navigation li.dropdown ul').length) {
+            $('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><span class="fas fa-chevron-down"></span></div>');
+
+            //Dropdown Button
+            $('.main-header .navigation li.dropdown .dropdown-btn').on('click', function() {
+                $(this).prev('ul').slideToggle(500);
+                $(this).prev('.megamenu').slideToggle(800);
+            });
+
+            //Disable dropdown parent link
+            $('.navigation li.dropdown > a').on('click', function(e) {
+                e.preventDefault();
+            });
+        }
+
+        // Submenu Dropdown Toggle
+        if ($('.main-header .main-menu').length) {
+            $('.main-header .main-menu .navbar-toggle').click(function() {
+                $(this).prev().prev().next().next().children('li.dropdown').hide();
+            });
+        }
+
+
+
+
+
+
+        // ## Testimonials Active
+        if ($('.testimonials-wrap').length) {
+            $('.testimonials-wrap').slick({
+                dots: false,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                speed: 1000,
+                focusOnSelect: false,
+                prevArrow: '.testimonial-prev',
+                nextArrow: '.testimonial-next',
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                responsive: [{
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }]
+            });
+        }
+
+
+
+        // ## Project Filter
+        $(".project-filter li").on('click', function() {
+            $(".project-filter li").removeClass("current");
+            $(this).addClass("current");
+
+            var selector = $(this).attr('data-filter');
+            $('.project-masonry-active').imagesLoaded(function() {
+                $(".project-masonry-active").isotope({
+                    itemSelector: '.item',
+                    filter: selector,
+                    masonry: {
+                        columnWidth: '.item'
+                    }
+                });
+            });
+
+        });
+
+
+
+        /* ## Fact Counter + Text Count - Our Success */
+        if ($('.counter-text-wrap').length) {
+            $('.counter-text-wrap').appear(function() {
+
+                var $t = $(this),
+                    n = $t.find(".count-text").attr("data-stop"),
+                    r = parseInt($t.find(".count-text").attr("data-speed"), 10);
+
+                if (!$t.hasClass("counted")) {
+                    $t.addClass("counted");
+                    $({
+                        countNum: $t.find(".count-text").text()
+                    }).animate({
+                        countNum: n
+                    }, {
+                        duration: r,
+                        easing: "linear",
+                        step: function() {
+                            $t.find(".count-text").text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $t.find(".count-text").text(this.countNum);
+                        }
+                    });
+                }
+
+            }, {
+                accY: 0
+            });
+        }
+
+
+
+        // ## Scroll to Top
+        if ($('.scroll-to-target').length) {
+            $(".scroll-to-target").on('click', function() {
+                var target = $(this).attr('data-target');
+                // animate
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 1000);
+
+            });
+        }
+
+
+        // ## Nice Select
+        $('select').niceSelect();
+
+
+        // ## WOW Animation
+        if ($('.wow').length) {
+            var wow = new WOW({
+                boxClass: 'wow', // animated element css class (default is wow)
+                animateClass: 'animated', // animation css class (default is animated)
+                offset: 0, // distance to the element when triggering the animation (default is 0)
+                mobile: false, // trigger animations on mobile devices (default is true)
+                live: true // act on asynchronously loaded content (default is true)
+            });
+            wow.init();
+        }
+
+
+    });
+
+
+    /* ==========================================================================
+       When document is resize, do
+       ========================================================================== */
+
+    $(window).on('resize', function() {
+        var mobileWidth = 992;
+        var navcollapse = $('.navigation li.dropdown');
+        navcollapse.children('ul').hide();
+        navcollapse.children('.megamenu').hide();
+
+    });
+
+
+    /* ==========================================================================
+       When document is scroll, do
+       ========================================================================== */
+
+    $(window).on('scroll', function() {
+
+        // ## Header Style and Scroll to Top
+        function headerStyle() {
+            if ($('.main-header').length) {
+                var windowpos = $(window).scrollTop();
+                var siteHeader = $('.main-header');
+                var scrollLink = $('.scroll-top');
+                if (windowpos >= 100) {
+                    siteHeader.addClass('fixed-header');
+                    scrollLink.fadeIn(300);
+                } else {
+                    siteHeader.removeClass('fixed-header');
+                    scrollLink.fadeOut(300);
+                }
+            }
+        }
+
+        headerStyle();
+
+    });
+
+
+
+
+
+
+    /* ==========================================================================
+           SCROLLER ANIMATION
+           ========================================================================== */
+
+    const scrollers = document.querySelectorAll(".scroller");
+
+    // If a user hasn't opted in for recuded motion, then we add the animation
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        addAnimation();
+    }
+
+    function addAnimation() {
+        scrollers.forEach((scroller) => {
+            // add data-animated="true" to every `.scroller` on the page
+            scroller.setAttribute("data-animated", true);
+
+            // Make an array from the elements within `.scroller-inner`
+            const scrollerInner = scroller.querySelector(".scroller__inner");
+            const scrollerContent = Array.from(scrollerInner.children);
+
+            // For each item in the array, clone it
+            // add aria-hidden to it
+            // add it into the `.scroller-inner`
+            scrollerContent.forEach((item) => {
+                const duplicatedItem = item.cloneNode(true);
+                duplicatedItem.setAttribute("aria-hidden", true);
+                scrollerInner.appendChild(duplicatedItem);
+            });
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==========================================================================
+       When document is loaded, do
+       ========================================================================== */
+
+    $(window).on('load', function() {
+
+        const svg = document.getElementById("preloaderSvg");
+        const tl = gsap.timeline();
+        const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+        const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+
+        tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
+            delay: 1.5,
+            y: -100,
+            opacity: 0,
+        });
+        tl.to(svg, {
+            duration: 0.5,
+            attr: { d: curve },
+            ease: "power2.easeIn",
+        }).to(svg, {
+            duration: 0.5,
+            attr: { d: flat },
+            ease: "power2.easeOut",
+        });
+        tl.to(".preloader", {
+            y: -1500,
+        });
+        tl.to(".preloader", {
+            zIndex: -1,
+            display: "none",
+        });
+
+
+
+    });
+
+
+
+    
+
+})(window.jQuery);
