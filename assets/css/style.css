@@ -34,15 +34,15 @@ Version      : 1.0
 * ----------------------------------------------------------------------------------------
 */
 :root {
-    --main-color: #9f9f9f;
+    --main-color: #A8B2BC;
     --heading-color: #fff;
-    --primary-color: #eb5d3a;
+    --primary-color: #4A7C9B;
     --lighter-color: #ccc;
-    --subtitle-color: #ccc;
-    --black-color: #000;
-    --border-color: rgba(119, 119, 125, .2);
-    --button-border: rgba(119, 119, 125, .2);
-    --body-background: #000;
+    --subtitle-color: #B0BEC5;
+    --black-color: #0F1A2E;
+    --border-color: rgba(74, 124, 155, .2);
+    --button-border: rgba(74, 124, 155, .2);
+    --body-background: #0F1A2E;
     --grey-bg: #E6EAEE;
 }
 
