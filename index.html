@@ -28,11 +28,16 @@
 
         <!-- Visit Notification -->
         <script>
-            fetch('https://mkportfolio.mkelly801.workers.dev', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ page: document.title, referrer: document.referrer || 'Direct' })
-            }).catch(function(){});
+            (function() {
+                var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+                if (isLocal || sessionStorage.getItem('notified_home')) return;
+                sessionStorage.setItem('notified_home', 'true');
+                fetch('https://mkportfolio.mkelly801.workers.dev', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ page: 'Home', referrer: document.referrer || 'Direct' })
+                }).catch(function(){});
+            })();
         </script>
 
         <!-- Google Analytics -->
