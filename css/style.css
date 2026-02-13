@@ -575,7 +575,7 @@ nav.navbar .logo {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
+    color: #000;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -590,7 +590,7 @@ nav.navbar .navbar-toggler {
 }
 
 nav.navbar .navbar-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 nav.navbar .nav-item {
@@ -611,7 +611,7 @@ nav.navbar .nav-item:last-child {
 }
 
 nav.navbar .nav-item .nav-link {
-    color: #fff;
+    color: #000;
     position: relative;
     text-decoration: none;
     padding: 0;
@@ -624,7 +624,7 @@ nav.navbar .nav-item .nav-link:before {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #000;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
@@ -695,21 +695,13 @@ nav.fixed-top .nav-item .nav-link:before {
 }
 
 .banner:after {
-    content: " ";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    z-index: 2;
-    opacity: .5;
+    display: none;
 }
 
 .banner .banner-caption {
     top: 50%;
     position: absolute;
-    color: #fff;
+    color: #222;
     z-index: 11;
     width: 100%;
     -webkit-transform: translateY(-50%);
@@ -720,13 +712,13 @@ nav.fixed-top .nav-item .nav-link:before {
 .banner .banner-caption h1 {
     font-size: 68px;
     font-weight: 900;
-    color: #fff;
+    color: #222;
 }
 
 .banner .banner-caption p {
     font-size: 22px;
     font-family: "Raleway", san-serif;
-    color: #eee;
+    color: #484848;
     max-width: 700px;
 }
 
@@ -803,7 +795,7 @@ nav.fixed-top .nav-item .nav-link:before {
 }
 
 .arrow a {
-    color: #fff;
+    color: #222;
 }
 
 .bounce {
