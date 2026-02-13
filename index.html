@@ -241,8 +241,11 @@
         <div id="passwordModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
             <div style="background:#fff; padding:40px; max-width:400px; width:90%; text-align:center;">
                 <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Password Required</h3>
-                <p style="font-size:14px; color:#666; margin-bottom:20px;">These case studies contain confidential work. Please enter the password to continue.</p>
-                <input type="password" id="passwordInput" placeholder="Enter password" style="width:100%; padding:10px; border:2px solid #222; font-size:14px; margin-bottom:10px; font-family:'Open Sans',sans-serif;">
+                <p style="font-size:14px; color:#666; margin-bottom:20px;">This case study is password protected. Please enter the password to continue.</p>
+                <div style="position:relative;">
+                    <input type="password" id="passwordInput" placeholder="Enter password" style="width:100%; padding:10px 40px 10px 10px; border:2px solid #222; font-size:14px; margin-bottom:10px; font-family:'Open Sans',sans-serif;">
+                    <i id="passwordToggle" class="fa fa-eye" style="position:absolute; right:12px; top:12px; cursor:pointer; color:#888; font-size:16px;"></i>
+                </div>
                 <p id="passwordError" style="color:red; font-size:13px; display:none; margin-bottom:10px;">Incorrect password. Please try again.</p>
                 <div>
                     <button id="passwordSubmit" class="main-btn" style="margin-right:10px;">Submit</button>
@@ -262,17 +265,8 @@
         <!--Case Study Password Protection-->
         <script>
         (function() {
-            var PASS_HASH = 'd4d0a0e0';
+            var PASS_KEY = 'bWtlbGx5ODAxQFVYMjY=';
             var pendingHref = null;
-
-            function simpleHash(str) {
-                var hash = 0;
-                for (var i = 0; i < str.length; i++) {
-                    hash = ((hash << 5) - hash) + str.charCodeAt(i);
-                    hash |= 0;
-                }
-                return (hash >>> 0).toString(16);
-            }
 
             function isUnlocked() {
                 return sessionStorage.getItem('portfolio_unlocked') === 'true';
@@ -294,7 +288,7 @@
 
             document.getElementById('passwordSubmit').addEventListener('click', function() {
                 var input = document.getElementById('passwordInput').value;
-                if (simpleHash(input) === PASS_HASH) {
+                if (input === atob(PASS_KEY)) {
                     sessionStorage.setItem('portfolio_unlocked', 'true');
                     document.getElementById('passwordModal').style.display = 'none';
                     if (pendingHref) window.location.href = pendingHref;
@@ -310,6 +304,17 @@
             document.getElementById('passwordCancel').addEventListener('click', function() {
                 document.getElementById('passwordModal').style.display = 'none';
                 pendingHref = null;
+            });
+
+            document.getElementById('passwordToggle').addEventListener('click', function() {
+                var input = document.getElementById('passwordInput');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    this.className = 'fa fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    this.className = 'fa fa-eye';
+                }
             });
         })();
         </script>

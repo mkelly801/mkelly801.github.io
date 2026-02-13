@@ -150,8 +150,11 @@
         <div id="passwordGate" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f2f2f2; z-index:9999; justify-content:center; align-items:center;">
             <div style="background:#fff; padding:40px; max-width:400px; width:90%; text-align:center;">
                 <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Password Required</h3>
-                <p style="font-size:14px; color:#666; margin-bottom:20px;">This case study contains confidential work. Please enter the password to continue.</p>
-                <input type="password" id="gatePasswordInput" placeholder="Enter password" style="width:100%; padding:10px; border:2px solid #222; font-size:14px; margin-bottom:10px; font-family:'Open Sans',sans-serif;">
+                <p style="font-size:14px; color:#666; margin-bottom:20px;">This case study is password protected. Please enter the password to continue.</p>
+                <div style="position:relative;">
+                    <input type="password" id="gatePasswordInput" placeholder="Enter password" style="width:100%; padding:10px 40px 10px 10px; border:2px solid #222; font-size:14px; margin-bottom:10px; font-family:'Open Sans',sans-serif;">
+                    <i id="gatePasswordToggle" class="fa fa-eye" style="position:absolute; right:12px; top:12px; cursor:pointer; color:#888; font-size:16px;"></i>
+                </div>
                 <p id="gatePasswordError" style="color:red; font-size:13px; display:none; margin-bottom:10px;">Incorrect password. Please try again.</p>
                 <div>
                     <button id="gatePasswordSubmit" class="main-btn" style="margin-right:10px;">Submit</button>
@@ -162,16 +165,7 @@
 
         <script>
         (function() {
-            var PASS_HASH = 'd4d0a0e0';
-
-            function simpleHash(str) {
-                var hash = 0;
-                for (var i = 0; i < str.length; i++) {
-                    hash = ((hash << 5) - hash) + str.charCodeAt(i);
-                    hash |= 0;
-                }
-                return (hash >>> 0).toString(16);
-            }
+            var PASS_KEY = 'bWtlbGx5ODAxQFVYMjY=';
 
             if (sessionStorage.getItem('portfolio_unlocked') === 'true') return;
 
@@ -181,7 +175,7 @@
 
             document.getElementById('gatePasswordSubmit').addEventListener('click', function() {
                 var input = document.getElementById('gatePasswordInput').value;
-                if (simpleHash(input) === PASS_HASH) {
+                if (input === atob(PASS_KEY)) {
                     sessionStorage.setItem('portfolio_unlocked', 'true');
                     gate.style.display = 'none';
                     document.querySelector('.case-study-detail').style.display = '';
@@ -192,6 +186,17 @@
 
             document.getElementById('gatePasswordInput').addEventListener('keydown', function(e) {
                 if (e.key === 'Enter') document.getElementById('gatePasswordSubmit').click();
+            });
+
+            document.getElementById('gatePasswordToggle').addEventListener('click', function() {
+                var input = document.getElementById('gatePasswordInput');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    this.className = 'fa fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    this.className = 'fa fa-eye';
+                }
             });
         })();
         </script>
