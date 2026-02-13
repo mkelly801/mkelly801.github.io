@@ -146,6 +146,56 @@
         </div>
         <!--Case Study Detail End-->
 
+        <!--Password Gate-->
+        <div id="passwordGate" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f2f2f2; z-index:9999; justify-content:center; align-items:center;">
+            <div style="background:#fff; padding:40px; max-width:400px; width:90%; text-align:center;">
+                <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Password Required</h3>
+                <p style="font-size:14px; color:#666; margin-bottom:20px;">This case study contains confidential work. Please enter the password to continue.</p>
+                <input type="password" id="gatePasswordInput" placeholder="Enter password" style="width:100%; padding:10px; border:2px solid #222; font-size:14px; margin-bottom:10px; font-family:'Open Sans',sans-serif;">
+                <p id="gatePasswordError" style="color:red; font-size:13px; display:none; margin-bottom:10px;">Incorrect password. Please try again.</p>
+                <div>
+                    <button id="gatePasswordSubmit" class="main-btn" style="margin-right:10px;">Submit</button>
+                    <a href="index.html" style="display:inline-block; background:none; border:2px solid #222; padding:10px 20px; font-size:13px; font-weight:600; text-transform:uppercase; cursor:pointer; font-family:'Raleway',sans-serif; color:#222;">Back</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        (function() {
+            var PASS_HASH = 'd4d0a0e0';
+
+            function simpleHash(str) {
+                var hash = 0;
+                for (var i = 0; i < str.length; i++) {
+                    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                    hash |= 0;
+                }
+                return (hash >>> 0).toString(16);
+            }
+
+            if (sessionStorage.getItem('portfolio_unlocked') === 'true') return;
+
+            document.querySelector('.case-study-detail').style.display = 'none';
+            var gate = document.getElementById('passwordGate');
+            gate.style.display = 'flex';
+
+            document.getElementById('gatePasswordSubmit').addEventListener('click', function() {
+                var input = document.getElementById('gatePasswordInput').value;
+                if (simpleHash(input) === PASS_HASH) {
+                    sessionStorage.setItem('portfolio_unlocked', 'true');
+                    gate.style.display = 'none';
+                    document.querySelector('.case-study-detail').style.display = '';
+                } else {
+                    document.getElementById('gatePasswordError').style.display = 'block';
+                }
+            });
+
+            document.getElementById('gatePasswordInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') document.getElementById('gatePasswordSubmit').click();
+            });
+        })();
+        </script>
+
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
