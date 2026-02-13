@@ -1697,6 +1697,13 @@ section.portfolio .portfolio-caption h4 a:hover {
     font-weight: 700;
 }
 
+.case-study-detail .case-study-header p.summary {
+    font-size: 16px;
+    color: #555;
+    margin-top: 15px;
+    line-height: 1.7;
+}
+
 .case-study-detail .case-study-hero-img {
     margin-bottom: 40px;
 }
