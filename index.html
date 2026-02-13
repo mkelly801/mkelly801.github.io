@@ -26,6 +26,15 @@
         <!--Site Main Style css-->
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- Visit Notification -->
+        <script>
+            fetch('https://mkportfolio.mkelly801.workers.dev', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ page: document.title, referrer: document.referrer || 'Direct' })
+            }).catch(function(){});
+        </script>
+
         <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GW8T37Q1KV"></script>
         <script>

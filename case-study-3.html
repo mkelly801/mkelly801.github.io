@@ -16,6 +16,15 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900%7cOpen+Sans:400,600,700,800" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- Visit Notification -->
+        <script>
+            fetch('https://mkportfolio.mkelly801.workers.dev', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ page: document.title, referrer: document.referrer || 'Direct' })
+            }).catch(function(){});
+        </script>
+
         <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GW8T37Q1KV"></script>
         <script>
