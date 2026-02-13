@@ -1606,6 +1606,9 @@ section.banner-blog .banner-caption h1 {
         display: none;
     }
     section.about .about-content {
+        margin-top: 0;
+    }
+    section.about .about-img {
         margin-top: 50px;
     }
     section.banner-blog .banner-caption h1 {
