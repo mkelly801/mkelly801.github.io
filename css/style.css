@@ -718,15 +718,16 @@ nav.fixed-top .nav-item .nav-link:before {
 }
 
 .banner .banner-caption h1 {
-    font-size: 88px;
+    font-size: 68px;
     font-weight: 900;
     color: #fff;
 }
 
 .banner .banner-caption p {
-    font-size: 24px;
+    font-size: 22px;
     font-family: "Raleway", san-serif;
     color: #eee;
+    max-width: 700px;
 }
 
 .cd-headline {
@@ -1597,10 +1598,10 @@ section.banner-blog .banner-caption h1 {
         background-color: transparent;
     }
     .banner .banner-caption h1 {
-        font-size: 75px;
+        font-size: 58px;
     }
     .banner .banner-caption p {
-        font-size: 21px;
+        font-size: 20px;
     }
     section.about .about-img:before {
         display: none;
@@ -1618,10 +1619,10 @@ section.banner-blog .banner-caption h1 {
 
 @media screen and (max-width: 767px) {
     .banner .banner-caption h1 {
-        font-size: 46px;
+        font-size: 38px;
     }
     .banner .banner-caption p {
-        font-size: 17px;
+        font-size: 16px;
     }
     .banner #home-svg {
         height: 80px;
