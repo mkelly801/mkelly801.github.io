@@ -575,7 +575,7 @@ nav.navbar .logo {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #000;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -590,7 +590,7 @@ nav.navbar .navbar-toggler {
 }
 
 nav.navbar .navbar-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 nav.navbar .nav-item {
@@ -611,7 +611,7 @@ nav.navbar .nav-item:last-child {
 }
 
 nav.navbar .nav-item .nav-link {
-    color: #000;
+    color: #fff;
     position: relative;
     text-decoration: none;
     padding: 0;
@@ -624,7 +624,7 @@ nav.navbar .nav-item .nav-link:before {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: #fff;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
@@ -652,7 +652,7 @@ nav.fixed-top {
     position: fixed;
     padding-top: 13px;
     padding-bottom: 13px;
-    background-color: #fff;
+    background-color: #f2f2f2;
     -webkit-box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
 }
@@ -695,13 +695,21 @@ nav.fixed-top .nav-item .nav-link:before {
 }
 
 .banner:after {
-    display: none;
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    z-index: 2;
+    opacity: .5;
 }
 
 .banner .banner-caption {
     top: 50%;
     position: absolute;
-    color: #222;
+    color: #fff;
     z-index: 11;
     width: 100%;
     -webkit-transform: translateY(-50%);
@@ -712,13 +720,13 @@ nav.fixed-top .nav-item .nav-link:before {
 .banner .banner-caption h1 {
     font-size: 68px;
     font-weight: 900;
-    color: #222;
+    color: #fff;
 }
 
 .banner .banner-caption p {
     font-size: 22px;
     font-family: "Raleway", san-serif;
-    color: #484848;
+    color: #eee;
     max-width: 700px;
 }
 
@@ -795,7 +803,7 @@ nav.fixed-top .nav-item .nav-link:before {
 }
 
 .arrow a {
-    color: #222;
+    color: #fff;
 }
 
 .bounce {
